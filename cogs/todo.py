@@ -18,7 +18,7 @@ class Todo(commands.Cog):
       desc: str = ''
       for i in range(len(elements)):
         desc += f'\n**{i + 1}**. {elements[i]}'
-      await ctx.send(embed=Embed(title=f"**{ctx.author.name}** Todolist", description=desc, color=0x3498db))
+      await ctx.send(embed=Embed(title=f"**{ctx.author.name}** Todolist", description=desc, color=0x3498db).set_thumbnail(ctx.author.avatar.url))
     elif action == "add":
       val: str = num + " " + value
       if search(e, categorie="todo") is True:
@@ -36,7 +36,7 @@ class Todo(commands.Cog):
         return await ctx.send(translate("valueerror", langu))
       edit(e, val, categorie="todo")
     else:
-      await ctx.send(translate("invalidtype", langu).format("action", "actions", "\nadd\ndisplay\nremove"))
+      return await ctx.send(translate("invalidtype", langu).format("action", "actions", "\nadd\ndisplay\nremove"))
 
 def setup(bot):
   bot.add_cog(Todo(bot))
