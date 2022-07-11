@@ -3,7 +3,7 @@ from nextcord import Member
 from language import translate, load
 class Moderation(commands.Cog):
   def __init__(self, bot):
-    self.bot = self.client = bot
+    self.bot = bot
   
   @commands.command()
   async def ban(self, ctx, member: Member = None, *, reason: str = None):
