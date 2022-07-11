@@ -2,7 +2,7 @@ from nextcord.ext import commands
 from language import boutton
 class Language(commands.Cog):
   def __init__(self, bot):
-    self.bot = self.client = bot
+    self.bot = bot
   
   @commands.command()
   async def language(self, ctx):
