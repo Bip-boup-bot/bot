@@ -4,7 +4,7 @@ from namedb import edit, get, search, add
 from nextcord import Embed
 class Todo(commands.Cog):
   def __init__(self, bot):
-    self.bot = self.client = bot
+    self.bot = bot
 
   @commands.command()
   async def todo(self, ctx, action: str = "display", num = None, *, value: str = None):
